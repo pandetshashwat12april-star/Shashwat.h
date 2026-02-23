@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shashwat Creative Website</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Orbitron&family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 50px;
+    margin-top: 20px;
+    color: yellow;
+    text-shadow: 3px 3px 10px black;
+}
+
+.contact {
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    color: cyan;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.game-btn {
+    background: orange;
+    color: black;
+}
+
+.quiz-btn {
+    background: lime;
+    color: black;
+}
+
+#quizSection {
+    display: none;
+    margin-top: 20px;
+}
+
+#result {
+    font-size: 22px;
+    margin-top: 20px;
+    font-family: 'Pacifico', cursive;
+    color: yellow;
+}
+
+.footer {
+    margin-top: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Welcome Popup */
+#welcomeBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#welcomeBox img {
+    width: 200px;
+}
+
+#welcomeBox button {
+    background: yellow;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Welcome by Jaddu -->
+<div id="welcomeBox">
+    <h1>👽 Welcome by Jaddu 👽</h1>
+    <img src="https://i.imgur.com/8Km9tLL.png" alt="Jaddu">
+    <button onclick="closeWelcome()">Enter Website</button>
+</div>
+
+<h1>🎉 Welcome to My Colorful Website 🎉</h1>
+
+<div class="contact">
+    📞 Contact: 7574659889
+</div>
+
+<button class="game-btn" onclick="alert('Ping Pong Game Coming Soon!')">🎮 Ping Pong</button>
+<button class="quiz-btn" onclick="showQuiz()">🧠 Quiz</button>
+
+<div id="quizSection">
+    <h2 style="font-family: 'Pacifico', cursive;">Tomorrow is which day?</h2>
+    <button onclick="checkAnswer('Sunday')">Sunday</button>
+    <button onclick="checkAnswer('Monday')">Monday</button>
+    <button onclick="checkAnswer('Wednesday')">Wednesday</button>
+    <button onclick="checkAnswer('Saturday')">Saturday</button>
+    <div id="result"></div>
+</div>
+
+<div class="footer">
+    ✨ Created by Shashwat ✨
+</div>
+
+<script>
+function closeWelcome() {
+    document.getElementById("welcomeBox").style.display = "none";
+}
+
+function showQuiz() {
+    document.getElementById("quizSection").style.display = "block";
+}
+
+function checkAnswer(answer) {
+    let result = document.getElementById("result");
+
+    if (answer === "Sunday") {
+        result.innerHTML = `
+        🔍 Checking by Elon Musk... <br>
+        🚀 Contacting NASA... <br>
+        🌍 Checking by Google... <br><br>
+        ✅ OK! Answer is Correct!
+        `;
+    } else {
+        result.innerHTML = "❌ Wrong Answer! Try Again.";
+    }
+}
+</script>
+
+</body>
+</html>
